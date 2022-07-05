@@ -4,6 +4,8 @@ import { cac } from '../src'
 test('basic-usage', () => {
   const cli = cac()
 
+  console.log('process.cwd', process.cwd())
+
   cli.option('--type <type>', 'Choose a project type')
 
   // process.argv
