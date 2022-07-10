@@ -7,10 +7,11 @@ class Option {
   rawName: string
   desc: string
   config: OptionConfig
-  constructor(rawName: string, desc: string, config: OptionConfig) {
+  constructor(rawName: string, desc: string, config?: OptionConfig) {
     this.rawName = rawName
     this.desc = desc
-    this.config = config
+    console.log('config', config)
+    this.config = Object.assign({}, config)
     // 过滤掉--
     const resolvedName = rawName.match(/--(\w+) \<(\w+)\>/)?.[1];
     if(resolvedName) this.rawName = resolvedName

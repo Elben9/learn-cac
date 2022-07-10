@@ -17,7 +17,7 @@ class CAC {
     console.log('options', this.globalCommand.options)
     // 拿出用户输入的参数，赋值给options
     const options =  this.globalCommand.options.reduce((options, option) => {
-      options[option.rawName] = mriResult[option.rawName]
+      options[option.rawName] = mriResult[option.rawName] || option.config.default
       return options
     }, {})
     return {
